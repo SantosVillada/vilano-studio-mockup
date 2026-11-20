@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <title>Vilano Studio — Peluquería & Barbería</title>
+  <meta name="theme-color" content="#30241D">
+  <title>Vilano Studio — Belleza & Estilo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --paper: #ffffff;
-      --ink: #171411;
-      --muted: #74665b;
-      --olive: #6a4a35;
-      --olive-dark: #171411;
-      --clay: #c7a45d;
-      --line: rgba(23, 20, 17, .14);
+      --paper: #FFFFFF;
+      --cream: #F2E9DB;
+      --ink: #30241D;
+      --muted: #76685D;
+      --olive: #30241D;
+      --olive-dark: #30241D;
+      --clay: #B89A68;
+      --bronze: #946B49;
+      --line: rgba(48, 36, 29, .15);
       --serif: "Playfair Display", Georgia, serif;
       --sans: "DM Sans", Arial, sans-serif;
     }
@@ -26,19 +28,19 @@
     a { color: inherit; text-decoration: none; }
     .announcement {
       min-height: 34px; display: flex; justify-content: center; align-items: center;
-      background: var(--olive-dark); color: #faf9f6; font-size: 10px; letter-spacing: .16em;
+      background: var(--olive-dark); color: var(--cream); font-size: 10px; letter-spacing: .16em;
       text-transform: uppercase; text-align: center; padding: 7px 16px;
     }
-    .announcement span { color: #9b6743; margin: 0 8px; }
+    .announcement span { color: var(--bronze); margin: 0 8px; }
     .header {
       height: 78px; padding: 0 7vw; display: flex; align-items: center; justify-content: space-between;
       border-bottom: 1px solid var(--line); background: var(--paper);
     }
     .brand { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; }
     .brand-name { font-family: var(--serif); font-size: 24px; font-weight: 600; letter-spacing: .05em; }
-    .brand-sub { margin: 6px 0 0 9px; text-align: left; font-size: 9px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #b08d4d; }
+    .brand-sub { margin: 6px 0 0 9px; text-align: left; font-size: 9px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--clay); }
     .nav { display: flex; align-items: center; gap: 34px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
-    .nav a:not(.nav-cta) { color: #604b3d; }
+    .nav a:not(.nav-cta) { color: #604B3D; }
     .nav a[aria-current="page"] { color: var(--ink); }
     .nav-cta, .button {
       display: inline-flex; align-items: center; justify-content: center; gap: 11px;
@@ -49,11 +51,11 @@
     .arrow { font-size: 16px; line-height: 10px; }
     .hero {
       min-height: 590px; position: relative; display: flex; align-items: center; overflow: hidden;
-      background: #211912;
+      background: #30241D;
     }
     .hero::before {
       content: ""; position: absolute; inset: 0;
-      background: linear-gradient(90deg, rgba(20, 15, 11, .78) 0%, rgba(29, 22, 17, .5) 46%, rgba(25, 19, 14, .1) 100%),
+      background: linear-gradient(90deg, rgba(31, 23, 18, .84) 0%, rgba(48, 36, 29, .52) 46%, rgba(48, 36, 29, .1) 100%),
         url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=2200&q=85") center 42% / cover;
       transform: scale(1.01);
     }
@@ -72,22 +74,22 @@
     h2 { font: 500 clamp(34px, 4.2vw, 52px)/1.15 var(--serif); letter-spacing: -.025em; margin: 17px 0 14px; }
     .intro p { max-width: 540px; margin: 0 auto; color: var(--muted); font-size: 13px; line-height: 1.8; }
     .branches { padding: 0 8vw 105px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .branch-card { position: relative; min-height: 490px; overflow: hidden; color: white; background: #2c2119; }
+    .branch-card { position: relative; min-height: 490px; overflow: hidden; color: white; background: #30241D; }
     .branch-card::before {
       content: ""; position: absolute; inset: 0; background-position: center; background-size: cover;
       transition: transform .5s ease;
     }
     .branch-card:hover::before { transform: scale(1.03); }
     .salon::before {
-      background-image: linear-gradient(0deg, rgba(25,17,11,.84), rgba(25,17,11,.04) 74%),
+      background-image: linear-gradient(0deg, rgba(48,36,29,.88), rgba(48,36,29,.04) 74%),
       url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=85");
     }
     .barber::before {
-      background-image: linear-gradient(0deg, rgba(25,17,11,.86), rgba(25,17,11,.14) 74%),
+      background-image: linear-gradient(0deg, rgba(48,36,29,.9), rgba(48,36,29,.14) 74%),
       url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=85");
     }
     .branch-content { position: absolute; z-index: 1; left: 34px; right: 34px; bottom: 33px; }
-    .branch-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: #d8bd82; }
+    .branch-label { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: #DCC9A7; }
     h3 { margin: 10px 0; font: 500 36px/1.1 var(--serif); }
     .branch-content p { color: rgba(255,255,255,.79); font-size: 12px; line-height: 1.6; margin: 0 0 19px; max-width: 340px; }
     .branch-foot { border-top: 1px solid rgba(255,255,255,.35); padding-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
@@ -95,8 +97,8 @@
     .text-link { color: white; font-size: 9px; text-transform: uppercase; letter-spacing: .13em; white-space: nowrap; }
     .branch-action { border: 1px solid rgba(255,255,255,.7); padding: 11px 13px; }
     .branch-action:hover { background: white; color: var(--ink); }
-    .services { background: #f2e8dc; padding: 85px 10vw 92px; display: grid; grid-template-columns: .8fr 1.2fr; gap: 9vw; align-items: center; }
-    .services-copy .eyebrow { color: #9b6743; }
+    .services { background: var(--cream); padding: 85px 10vw 92px; display: grid; grid-template-columns: .8fr 1.2fr; gap: 9vw; align-items: center; }
+    .services-copy .eyebrow { color: var(--bronze); }
     .services-copy p { color: var(--muted); font-size: 13px; line-height: 1.8; max-width: 340px; }
     .service-list { border-top: 1px solid var(--line); }
     .service-row { min-height: 62px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 20px; font-family: var(--serif); font-size: 18px; }
@@ -114,7 +116,7 @@
     .footer-note { color: var(--muted); font-size: 10px; line-height: 1.7; }
     .social { display: flex; gap: 20px; color: var(--muted); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
     .booking-platform-mark { padding-top: 15px; color: #7d8079; text-align: center; font-size: 9px; letter-spacing: .05em; }
-    .booking-platform-mark strong { color: #9b6743; font-weight: 600; }
+    .booking-platform-mark strong { color: var(--clay); font-weight: 600; }
     @media (max-width: 760px) {
       .header { height: auto; min-height: 68px; padding: 14px 20px; flex-wrap: wrap; gap: 12px; }
       .nav { width: 100%; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 9px; }
@@ -147,7 +149,7 @@
   </style>
 </head>
 <body>
-  <div class="announcement">Dos espacios, una misma filosofía <span>✳</span> Reservas online con AgendaPro</div>
+  <div class="announcement">Nueva Córdoba · Belleza & estilo <span>✳</span> Reservas online con AgendaPro</div>
   <header class="header">
     <a class="brand" href="index.html#inicio" aria-label="Vilano Studio inicio">
       <span class="brand-name">VILANO</span>
@@ -173,7 +175,7 @@
           <div class="hero-note">AGENDA ABIERTA <b>24/7</b></div>
         </div>
       </div>
-      <div class="hero-index">BUENOS AIRES · 01 / 02</div>
+      <div class="hero-index">NUEVA CÓRDOBA · BELLEZA & ESTILO</div>
     </section>
 
     <section class="intro" id="espacios">
@@ -185,23 +187,23 @@
     <section class="branches" aria-label="Sucursales">
       <article class="branch-card salon">
         <div class="branch-content">
-          <div class="branch-label">01 · Salón de belleza</div>
-          <h3>Vilano Beauty</h3>
-          <p>Peluquería, color, tratamientos, uñas y esos pequeños cuidados que hacen la diferencia.</p>
+          <div class="branch-label">Local 2 · Peluquería & estética</div>
+          <h3>Vilano Beauty Studio</h3>
+          <p>Peluquería unisex, coloración, manicuría, pestañas, cejas y depilación.</p>
           <div class="branch-foot">
-            <span class="location">Palermo · Buenos Aires</span>
-            <a class="text-link branch-action" href="salon.html">Ver Vilano Beauty <span class="arrow">↗</span></a>
+            <span class="location">Nueva Córdoba · Local 2</span>
+            <a class="text-link branch-action" href="salon.html">Conocer Beauty <span class="arrow">↗</span></a>
           </div>
         </div>
       </article>
       <article class="branch-card barber">
         <div class="branch-content">
-          <div class="branch-label">02 · Barbería</div>
-          <h3>Vilano Barber</h3>
-          <p>Cortes clásicos y actuales, perfilado de barba y tiempo para vos, sin apuro.</p>
+          <div class="branch-label">Local 1 · Barbería</div>
+          <h3>Vilano Barber Studio</h3>
+          <p>Seis puestos para cortes, degradados y barba, con oficio y estilo contemporáneo.</p>
           <div class="branch-foot">
-            <span class="location">Villa Crespo · Buenos Aires</span>
-            <a class="text-link branch-action" href="barber.html">Ver Vilano Barber <span class="arrow">↗</span></a>
+            <span class="location">Nueva Córdoba · Local 1</span>
+            <a class="text-link branch-action" href="barber.html">Conocer Barber <span class="arrow">↗</span></a>
           </div>
         </div>
       </article>
@@ -214,17 +216,17 @@
         <p>Servicios pensados para vos, con profesionales que escuchan lo que querés y cuidan cada detalle.</p>
       </div>
       <div class="service-list">
-        <div class="service-row"><span>Corte & styling</span><small>Salón · Barbería</small></div>
-        <div class="service-row"><span>Color & tratamientos</span><small>Salón</small></div>
-        <div class="service-row"><span>Barba & perfilado</span><small>Barbería</small></div>
-        <div class="service-row"><span>Uñas & belleza</span><small>Salón</small></div>
+        <div class="service-row"><span>Peluquería unisex & coloración</span><small>Beauty Studio</small></div>
+        <div class="service-row"><span>Manicuría, pestañas & cejas</span><small>Beauty Studio</small></div>
+        <div class="service-row"><span>Depilación</span><small>Beauty Studio</small></div>
+        <div class="service-row"><span>Cortes, degradados & barba</span><small>Barber Studio</small></div>
       </div>
     </section>
 
     <section class="quote">
       <div class="quote-mark">“</div>
       <blockquote>Un buen cambio empieza cuando encontrás un espacio hecho para vos.</blockquote>
-      <cite>Vilano Studio · Belleza sin apuro</cite>
+      <cite>Vilano Studio · Belleza & estilo</cite>
     </section>
 
     <section class="booking-band" id="reservar">
@@ -241,7 +243,7 @@
       <span class="brand-name">VILANO</span>
       <span class="brand-sub">STUDIO</span>
     </div>
-    <div class="footer-note">Palermo · Vilano Beauty<br>Villa Crespo · Vilano Barber</div>
+    <div class="footer-note">Nueva Córdoba · Vilano Beauty Studio<br>Nueva Córdoba · Vilano Barber Studio</div>
     <div class="social"><span>Instagram</span><span>WhatsApp</span></div>
   </footer>
   <div class="booking-platform-mark">Reservas online · Agenda gestionada con <strong>AgendaPro</strong></div>
