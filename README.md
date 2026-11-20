@@ -1,6 +1,6 @@
 # Vilano Studio — mockup
 
-Landing page estática para presentar las dos sucursales:
+Sitio estático para presentar las dos sucursales, con una identidad visual compartida en blanco, beige, marrón, negro y dorado; incluye acentos bronce:
 
 - `index.html`: Vilano Studio
 - `salon.html`: Vilano Beauty
