@@ -13,6 +13,10 @@
     * { box-sizing:border-box; } body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); } a { color:inherit; text-decoration:none; }
     .top { padding:0 7vw; height:76px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
     .brand { display:flex; flex-direction:column; align-items:flex-start; font:600 21px var(--serif); letter-spacing:.06em; } .brand small { margin:4px 0 0 9px; text-align:left; font:700 9px var(--sans); letter-spacing:.2em; color:var(--olive); } .back { font-size:10px; letter-spacing:.12em; text-transform:uppercase; }
+    .site-nav { display:flex; align-items:center; gap:21px; font-size:9px; letter-spacing:.08em; text-transform:uppercase; }
+    .site-nav a { color:var(--muted); white-space:nowrap; }
+    .site-nav a[aria-current="page"] { color:var(--ink); }
+    .site-nav .nav-cta { padding:12px 15px; background:var(--ink); color:#fff; }
     .hero { min-height:570px; position:relative; display:flex; align-items:center; color:white; background:#292724; overflow:hidden; }
     .hero:before { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(18,17,16,.72),rgba(25,23,21,.2)),url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2000&q=85") center 43%/cover; }
     .hero-copy { position:relative; margin-left:11vw; width:min(560px,78vw); padding:70px 0; }
@@ -34,13 +38,20 @@
     .booking .button { margin:0; }
     footer { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:27px 8vw; color:var(--muted); font-size:10px; }
     footer a { color:var(--ink); }
-    @media(max-width:650px) { .top{height:auto;min-height:68px;padding:14px 20px;flex-wrap:wrap;gap:10px}.hero{min-height:520px}.hero-copy{margin-left:8vw}.intro{padding:58px 24px;grid-template-columns:1fr;gap:10px}.services{padding:55px 24px}.services-head{display:block}.booking{padding:35px 24px;align-items:flex-start;flex-direction:column}footer{padding:24px;align-items:flex-start;flex-direction:column}.service strong{font-size:17px} }
+    @media(max-width:800px) { .top{height:auto;min-height:68px;padding:14px 20px;flex-wrap:wrap;gap:12px}.site-nav{width:100%;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:8px}.site-nav .nav-cta{padding:9px 10px} }
+    @media(max-width:650px) { .hero{min-height:520px}.hero-copy{margin-left:8vw}.intro{padding:58px 24px;grid-template-columns:1fr;gap:10px}.services{padding:55px 24px}.services-head{display:block}.booking{padding:35px 24px;align-items:flex-start;flex-direction:column}footer{padding:24px;align-items:flex-start;flex-direction:column}.service strong{font-size:17px} }
   </style>
 </head>
 <body>
   <header class="top">
-    <a class="brand" href="index.html">VILANO<small>BEAUTY</small></a>
-    <a class="back" href="index.html#espacios">← Volver a los espacios</a>
+    <a class="brand" href="index.html#inicio">VILANO<small>BEAUTY</small></a>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a href="index.html#inicio">Inicio</a>
+      <a href="salon.html" aria-current="page">Vilano Beauty</a>
+      <a href="barber.html">Vilano Barber</a>
+      <a href="index.html#servicios">Servicios</a>
+      <a class="nav-cta" href="#reserva">Reservar turno</a>
+    </nav>
   </header>
   <main>
     <section class="hero">
@@ -68,7 +79,7 @@
     </section>
     <section class="booking" id="reserva">
       <div><h2>Tu próximo turno te espera.</h2><p>Agenda online disponible las 24 horas · Palermo, Buenos Aires</p></div>
-      <a class="button" href="index.html#espacios">Volver al mockup principal ↗</a>
+      <a class="button" href="index.html#espacios">Conocer ambas sucursales ↗</a>
     </section>
   </main>
   <footer><span>VILANO BEAUTY</span><a href="barber.html">Conocer Vilano Barber →</a><span>Agenda ilustrativa · Wonoma</span></footer>

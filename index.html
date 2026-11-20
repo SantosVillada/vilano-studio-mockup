@@ -39,6 +39,7 @@
     .brand-sub { margin: 6px 0 0 9px; text-align: left; font-size: 9px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #9b8048; }
     .nav { display: flex; align-items: center; gap: 34px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
     .nav a:not(.nav-cta) { color: #5f5b55; }
+    .nav a[aria-current="page"] { color: var(--ink); }
     .nav-cta, .button {
       display: inline-flex; align-items: center; justify-content: center; gap: 11px;
       padding: 14px 20px; background: var(--olive); color: white; font-size: 10px;
@@ -115,9 +116,9 @@
     .wonoma-mark { padding-top: 15px; color: #7d8079; text-align: center; font-size: 9px; letter-spacing: .05em; }
     .wonoma-mark strong { color: #8c7442; font-weight: 600; }
     @media (max-width: 760px) {
-      .header { height: 68px; padding: 0 20px; }
-      .nav { gap: 13px; font-size: 9px; }
-      .nav a:not(.nav-cta) { display: none; }
+      .header { height: auto; min-height: 68px; padding: 14px 20px; flex-wrap: wrap; gap: 12px; }
+      .nav { width: 100%; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 9px; }
+      .nav a:not(.nav-cta) { display: inline; }
       .nav-cta { padding: 11px 12px; font-size: 9px; }
       .brand-name { font-size: 21px; }
       .hero { min-height: 570px; }
@@ -138,30 +139,31 @@
     @media (max-width: 390px) {
       .announcement { font-size: 8px; }
       .branch-foot { align-items: flex-start; flex-direction: column; }
-      .header { gap: 8px; padding: 0 14px; }
+      .header { gap: 10px; padding: 12px 14px; }
       .brand-sub { font-size: 8px; font-weight: 700; letter-spacing: .16em; }
-      .nav { gap: 8px; }
-      .nav-cta { padding: 10px 9px; font-size: 8px; }
+      .nav { gap: 9px; font-size: 8px; }
+      .nav-cta { padding: 9px 8px; font-size: 8px; }
     }
   </style>
 </head>
 <body>
   <div class="announcement">Dos espacios, una misma filosofía <span>✳</span> Reservas online con Wonoma</div>
   <header class="header">
-    <a class="brand" href="#" aria-label="Vilano Studio inicio">
+    <a class="brand" href="index.html#inicio" aria-label="Vilano Studio inicio">
       <span class="brand-name">VILANO</span>
       <span class="brand-sub">STUDIO</span>
     </a>
     <nav class="nav" aria-label="Navegación principal">
-      <a href="#espacios">Nuestros espacios</a>
+      <a href="index.html#inicio" aria-current="page">Inicio</a>
+      <a href="salon.html">Vilano Beauty</a>
+      <a href="barber.html">Vilano Barber</a>
       <a href="#servicios">Servicios</a>
-      <a href="#visitanos">Visitanos</a>
       <a class="nav-cta" href="#reservar">Reservar turno <span class="arrow">↗</span></a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="inicio">
       <div class="hero-content">
         <div class="eyebrow">Un lugar para volver a vos</div>
         <h1>Tu estilo,<br>en buenas manos.</h1>
