@@ -47,10 +47,11 @@
       padding: 14px 20px; background: var(--olive); color: white; font-size: 10px;
       letter-spacing: .11em; text-transform: uppercase; border: 0;
     }
-    .nav-cta { padding: 12px 16px; background: var(--clay); color: var(--ink); font-weight: 700; }
-    .nav-cta-disabled { opacity: .58; cursor: not-allowed; }
-    .button-agenda { background: var(--clay); color: var(--ink); border: 1px solid #DCC9A7; font-size: 11px; font-weight: 700; padding: 16px 22px; box-shadow: 0 8px 20px rgba(0,0,0,.2); }
+    .button-agenda,.button-agenda-disabled { display:inline-flex; align-items:center; justify-content:center; width:190px; min-width:190px; min-height:50px; padding:12px 16px; border:1px solid #DCC9A7; font-family:var(--sans); font-size:10px; font-weight:700; letter-spacing:.1em; text-align:center; text-transform:uppercase; }
+    .button-agenda { background: var(--clay); color: var(--ink); box-shadow: 0 8px 20px rgba(0,0,0,.2); }
+    .button-agenda-disabled { background:rgba(242,233,219,.14); color:#F2E9DB; cursor:not-allowed; }
     .button-agenda:hover { background: var(--cream); transform: translateY(-2px); }
+    .button-agenda:focus-visible { outline:3px solid var(--bronze); outline-offset:4px; }
     .arrow { font-size: 16px; line-height: 10px; }
     .hero {
       min-height: 590px; position: relative; display: flex; align-items: center; overflow: hidden;
@@ -98,10 +99,12 @@
     .branch-foot { border-top: 1px solid rgba(255,255,255,.35); padding-top: 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
     .location { font-size: 10px; letter-spacing: .04em; color: rgba(255,255,255,.78); }
     .text-link { color: white; font-size: 9px; text-transform: uppercase; letter-spacing: .13em; white-space: nowrap; }
-    .branch-action { border: 1px solid rgba(255,255,255,.7); padding: 11px 13px; }
+    .branch-action { display:inline-flex; align-items:center; justify-content:center; min-width:105px; min-height:42px; border:1px solid rgba(255,255,255,.7); padding:0 12px; text-align:center; }
     .branch-action:hover { background: white; color: var(--ink); }
     .branch-links { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
-    .branch-booking { padding:11px 13px; border:1px solid var(--clay); background:var(--clay); color:var(--ink); font-weight:700; }
+    .branch-booking,.branch-booking-disabled { display:inline-flex; align-items:center; justify-content:center; width:135px; min-width:135px; min-height:42px; padding:0 12px; border:1px solid var(--clay); text-align:center; font-family:var(--sans); font-size:9px; line-height:1.2; letter-spacing:.1em; text-transform:uppercase; }
+    .branch-booking { background:var(--clay); color:var(--ink); font-weight:700; }
+    .branch-booking-disabled { background:rgba(242,233,219,.14); color:#F2E9DB; font-weight:600; cursor:not-allowed; }
     .services { background: var(--cream); padding: 85px 10vw 92px; display: grid; grid-template-columns: .8fr 1.2fr; gap: 9vw; align-items: center; }
     .services-copy .eyebrow { color: var(--bronze); }
     .services-copy p { color: var(--muted); font-size: 13px; line-height: 1.8; max-width: 340px; }
@@ -116,6 +119,8 @@
     .booking-band h2 { margin: 0 0 8px; font-size: 34px; }
     .booking-band p { margin: 0; color: rgba(255,255,255,.7); font-size: 12px; }
     .booking-band .button { flex-shrink: 0; background: var(--clay); color: var(--ink); border:1px solid #DCC9A7; font-weight:700; }
+    .booking-actions { display:flex; align-items:center; flex-wrap:wrap; gap:10px; }
+    .booking-actions .button-agenda,.booking-actions .button-agenda-disabled { flex:0 0 190px; }
     footer { padding: 37px 8vw; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
     footer .brand-name { font-size: 20px; }
     .footer-note { color: var(--muted); font-size: 10px; line-height: 1.7; }
@@ -126,7 +131,6 @@
       .header { height: auto; min-height: 68px; padding: 14px 20px; flex-wrap: wrap; gap: 12px; }
       .nav { width: 100%; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 9px; }
       .nav a:not(.nav-cta) { display: inline; }
-      .nav-cta { padding: 11px 12px; font-size: 9px; }
       .brand-name { font-size: 21px; }
       .hero { min-height: 570px; }
       .hero::before { background-position: 58% center; }
@@ -149,7 +153,8 @@
       .header { gap: 10px; padding: 12px 14px; }
       .brand-sub { font-size: 8px; font-weight: 700; letter-spacing: .16em; }
       .nav { gap: 9px; font-size: 8px; }
-      .nav-cta { padding: 9px 8px; font-size: 8px; }
+      .booking-actions { width:100%; flex-direction:column; align-items:stretch; }
+      .booking-actions .button-agenda,.booking-actions .button-agenda-disabled { width:100%; flex-basis:auto; }
     }
   </style>
 </head>
@@ -165,7 +170,6 @@
       <a href="salon.html">Vilano Beauty</a>
       <a href="barber.html">Vilano Barber</a>
       <a href="#servicios">Servicios</a>
-      <a class="nav-cta" href="https://vilanostudio.site.agendapro.com/ar" target="_blank" rel="noopener noreferrer">Reservar Beauty <span class="arrow">↗</span></a>
     </nav>
   </header>
 
@@ -177,6 +181,7 @@
         <p>Dos espacios creados para que te sientas bien. Encontrá el servicio que buscás y reservá tu próximo momento.</p>
         <div class="hero-actions">
           <a class="button button-agenda" href="https://vilanostudio.site.agendapro.com/ar" target="_blank" rel="noopener noreferrer">Reservar Beauty <span class="arrow">↗</span></a>
+          <button class="button button-agenda-disabled" type="button" disabled>Barber · Próximamente</button>
           <a class="button button-light" href="#espacios">Conocé los espacios <span class="arrow">↓</span></a>
         </div>
       </div>
@@ -198,8 +203,8 @@
           <div class="branch-foot">
             <span class="location">Nueva Córdoba · Local 2</span>
             <span class="branch-links">
-              <a class="text-link branch-action" href="salon.html">Ver Beauty</a>
-              <a class="text-link branch-booking" href="https://vilanostudio.site.agendapro.com/ar" target="_blank" rel="noopener noreferrer">Reservar ↗</a>
+              <a class="text-link branch-action" href="salon.html">Ver ficha</a>
+              <a class="text-link branch-booking" href="https://vilanostudio.site.agendapro.com/ar" target="_blank" rel="noopener noreferrer">Reservar turno ↗</a>
             </span>
           </div>
         </div>
@@ -211,7 +216,10 @@
           <p>Seis puestos para cortes, degradados y barba, con oficio y estilo contemporáneo.</p>
           <div class="branch-foot">
             <span class="location">Nueva Córdoba · Local 1</span>
-            <a class="text-link branch-action" href="barber.html">Conocer Barber <span class="arrow">↗</span></a>
+            <span class="branch-links">
+              <a class="text-link branch-action" href="barber.html">Ver ficha</a>
+              <button class="branch-booking-disabled" type="button" disabled>Próximamente</button>
+            </span>
           </div>
         </div>
       </article>
@@ -242,7 +250,10 @@
         <h2>¿Nos vemos pronto?</h2>
         <p>La agenda de Vilano Beauty está en AgendaPro. Vilano Barber estará disponible próximamente.</p>
       </div>
-      <a class="button button-agenda" href="https://vilanostudio.site.agendapro.com/ar" target="_blank" rel="noopener noreferrer">Reservar Beauty <span class="arrow">↗</span></a>
+      <div class="booking-actions">
+        <a class="button-agenda" href="https://vilanostudio.site.agendapro.com/ar" target="_blank" rel="noopener noreferrer">Reservar Beauty ↗</a>
+        <button class="button-agenda-disabled" type="button" disabled>Barber · Próximamente</button>
+      </div>
     </section>
   </main>
 
