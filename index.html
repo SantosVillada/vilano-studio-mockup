@@ -121,12 +121,12 @@
     .booking-band .button { flex-shrink: 0; background: var(--clay); color: var(--ink); border:1px solid #DCC9A7; font-weight:700; }
     .booking-actions { display:flex; align-items:center; flex-wrap:wrap; gap:10px; }
     .booking-actions .button-agenda,.booking-actions .button-agenda-disabled { flex:0 0 190px; }
-    footer { padding: 37px 8vw; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    footer { padding: 37px 8vw 22px; display: flex; flex-wrap:wrap; justify-content: space-between; align-items: center; gap: 24px; }
     footer .brand-name { font-size: 20px; }
     .footer-note { color: var(--muted); font-size: 10px; line-height: 1.7; }
     .social { display: flex; gap: 20px; color: var(--muted); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
-    .booking-platform-mark { padding-top: 15px; color: #7d8079; text-align: center; font-size: 9px; letter-spacing: .05em; }
-    .booking-platform-mark strong { color: var(--clay); font-weight: 600; }
+    .booking-platform-mark { flex:0 0 100%; width:100%; margin-top:4px; padding:14px 0 4px; border-top:1px solid var(--line); color:var(--muted); text-align:center; font-size:10px; line-height:1.5; letter-spacing:.05em; }
+    .booking-platform-mark strong { color:#946B49; font-weight:700; }
     @media (max-width: 760px) {
       .header { height: auto; min-height: 68px; padding: 14px 20px; flex-wrap: wrap; gap: 12px; }
       .nav { width: 100%; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 9px; }
@@ -264,7 +264,7 @@
     </div>
     <div class="footer-note">Nueva Córdoba · Vilano Beauty Studio<br>Nueva Córdoba · Vilano Barber Studio</div>
     <div class="social"><span>Instagram</span><span>WhatsApp</span></div>
+    <div class="booking-platform-mark">Agenda de Vilano Beauty alojada en <strong>AgendaPro</strong></div>
   </footer>
-  <div class="booking-platform-mark">Reservas online · Agenda gestionada con <strong>AgendaPro</strong></div>
 </body>
 </html>
