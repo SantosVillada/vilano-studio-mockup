@@ -45,9 +45,12 @@
     .booking .button { margin:0; padding:17px 25px; background:#B89A68; color:#30241D; border:1px solid #DCC9A7; font-size:11px; font-weight:700; letter-spacing:.12em; box-shadow:0 8px 20px rgba(0,0,0,.2); transition:background .2s ease,transform .2s ease; }
     .booking .button:hover { background:#F2E9DB; transform:translateY(-2px); }
     .booking .button:focus-visible { outline:3px solid #fff; outline-offset:4px; }
-    footer { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:27px 8vw; color:var(--muted); font-size:10px; }
+    footer { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:20px; padding:27px 8vw; color:var(--muted); font-size:10px; }
     footer a { color:var(--ink); }
     footer .footer-agenda { color:#946B49; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+    .social { display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; font-size:9px; letter-spacing:.04em; }
+    .social a { color:var(--muted); }
+    .social a:hover { color:var(--ink); }
     @media(max-width:800px) { .top{height:auto;min-height:68px;padding:14px 20px;flex-wrap:wrap;gap:12px}.site-nav{width:100%;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:8px}.site-nav .nav-cta{padding:9px 10px} }
     @media(max-width:650px) { .hero{min-height:520px}.hero-copy{margin-left:8vw}.intro{padding:58px 24px;grid-template-columns:1fr;gap:10px}.services{padding:55px 24px}.services-head{display:block}.booking{padding:35px 24px;align-items:flex-start;flex-direction:column}footer{padding:24px;align-items:flex-start;flex-direction:column}.service strong{font-size:17px} }
   </style>
@@ -95,6 +98,14 @@
       <a class="button button-agenda" href="https://vilanostudio.site.agendapro.com/ar" target="_blank" rel="noopener noreferrer">Reservar ahora ↗</a>
     </section>
   </main>
-  <footer><span>VILANO BEAUTY STUDIO</span><a href="barber.html">Conocer Vilano Barber Studio →</a><a class="footer-agenda" href="https://vilanostudio.site.agendapro.com/ar" target="_blank" rel="noopener noreferrer">Reservar en AgendaPro ↗</a></footer>
+  <footer>
+    <span>VILANO BEAUTY STUDIO</span>
+    <a href="barber.html">Conocer Vilano Barber Studio →</a>
+    <div class="social">
+      <a href="https://www.instagram.com/vilano_studio/" target="_blank" rel="noopener noreferrer">@vilano_studio</a>
+      <a href="https://wa.me/5493518377788" target="_blank" rel="noopener noreferrer">WhatsApp · +54 9 351 837-7788</a>
+    </div>
+    <a class="footer-agenda" href="https://vilanostudio.site.agendapro.com/ar" target="_blank" rel="noopener noreferrer">Reservar en AgendaPro ↗</a>
+  </footer>
 </body>
 </html>
