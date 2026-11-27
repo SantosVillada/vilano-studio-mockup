@@ -121,13 +121,14 @@
     .booking-band .button { flex-shrink: 0; background: var(--clay); color: var(--ink); border:1px solid #DCC9A7; font-weight:700; }
     .booking-actions { display:flex; align-items:center; flex-wrap:wrap; gap:10px; }
     .booking-actions .button-agenda,.booking-actions .button-agenda-disabled { flex:0 0 190px; }
-    footer { padding: 37px 8vw 22px; display: flex; flex-wrap:wrap; justify-content: space-between; align-items: center; gap: 24px; }
+    footer { padding: 37px 8vw 22px; display:grid; grid-template-columns:1fr 2fr 1.3fr; align-items:center; gap:24px; }
+    footer .brand { justify-self:start; }
     footer .brand-name { font-size: 20px; }
-    .footer-note { color: var(--muted); font-size: 10px; line-height: 1.7; }
-    .social { display: flex; flex-wrap:wrap; gap: 12px 20px; color: var(--muted); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+    .footer-note { color: var(--muted); text-align:center; font-size: 10px; line-height: 1.8; }
+    .social { display: flex; flex-wrap:wrap; justify-content:flex-end; gap: 8px 20px; color: var(--muted); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; }
     .social a { color:inherit; transition:color .2s ease; }
     .social a:hover { color:var(--ink); }
-    .booking-platform-mark { flex:0 0 100%; width:100%; margin-top:4px; padding:14px 0 4px; border-top:1px solid var(--line); color:var(--muted); text-align:center; font-size:10px; line-height:1.5; letter-spacing:.05em; }
+    .booking-platform-mark { grid-column:1 / -1; width:100%; margin-top:4px; padding:14px 0 4px; border-top:1px solid var(--line); color:var(--muted); text-align:center; font-size:10px; line-height:1.5; letter-spacing:.05em; }
     .booking-platform-mark strong { color:#946B49; font-weight:700; }
     @media (max-width: 760px) {
       .header { height: auto; min-height: 68px; padding: 14px 20px; flex-wrap: wrap; gap: 12px; }
@@ -146,8 +147,10 @@
       .services { padding: 65px 24px; grid-template-columns: 1fr; gap: 26px; }
       .quote { padding: 70px 24px; }
       .booking-band { padding: 38px 24px; align-items: flex-start; flex-direction: column; }
-      footer { padding: 30px 24px; flex-wrap: wrap; }
-      .social { width: 100%; }
+      footer { padding: 30px 24px 22px; grid-template-columns:1fr; justify-items:center; gap:18px; }
+      footer .brand { justify-self:center; }
+      .footer-note { text-align:center; }
+      .social { width:100%; justify-content:center; }
     }
     @media (max-width: 390px) {
       .announcement { font-size: 8px; }
@@ -203,7 +206,7 @@
           <h3>Vilano Beauty Studio</h3>
           <p>Peluquería unisex, coloración, manicuría, pestañas, cejas y depilación.</p>
           <div class="branch-foot">
-            <span class="location">Nueva Córdoba · Local 2</span>
+            <span class="location">Obispo Trejo 1268 · Nueva Córdoba</span>
             <span class="branch-links">
               <a class="text-link branch-action" href="salon.html">Ver ficha</a>
               <a class="text-link branch-booking" href="https://vilanostudio.site.agendapro.com/ar" target="_blank" rel="noopener noreferrer">Reservar turno ↗</a>
@@ -217,7 +220,7 @@
           <h3>Vilano Barber Studio</h3>
           <p>Seis puestos para cortes, degradados y barba, con oficio y estilo contemporáneo.</p>
           <div class="branch-foot">
-            <span class="location">Nueva Córdoba · Local 1</span>
+            <span class="location">Rondeau 130 · Nueva Córdoba</span>
             <span class="branch-links">
               <a class="text-link branch-action" href="barber.html">Ver ficha</a>
               <button class="branch-booking-disabled" type="button" disabled>Próximamente</button>
@@ -264,7 +267,7 @@
       <span class="brand-name">VILANO</span>
       <span class="brand-sub">STUDIO</span>
     </div>
-    <div class="footer-note">Dos locales · Nueva Córdoba</div>
+    <div class="footer-note">Obispo Trejo 1268, Nueva Córdoba · Vilano Beauty Studio<br>Rondeau 130, Nueva Córdoba · Vilano Barber Studio</div>
     <div class="social">
       <a href="https://www.instagram.com/vilano_studio?lqvp=MTlieHlvMjZrZnN6Yg==" target="_blank" rel="noopener noreferrer">@vilano_studio</a>
       <a href="https://wa.me/5493518377788" target="_blank" rel="noopener noreferrer">WhatsApp · +54 9 351 837-7788</a>
